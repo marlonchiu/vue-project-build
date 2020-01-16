@@ -1,5 +1,7 @@
 import { Navigator } from '../index'
 
+console.log(process.env.NODE_ENV)
+
 export default (Vue) => {
   // 如果是非线上环境，不加载 VConsole
   if (process.env.NODE_ENV !== 'production') {

@@ -2,11 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // 首页
-const Home = (resolve => {
+// const Home = () => import(/* webpackChunkName:'home'*/ '../views/home.vue')
+const Home = resolve => {
   require.ensure(['../views/home.vue'], () => {
     resolve(require('../views/home.vue'))
   })
-})
+}
 
 Vue.use(Router)
 

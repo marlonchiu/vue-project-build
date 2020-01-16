@@ -1,16 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// ��ҳ
-const Home = (resolve => {
+// 首页
+const Home = resolve => {
   require.ensure(['../views/home.vue'], () => {
     resolve(require('../views/home.vue'))
   })
-})
+}
 
 Vue.use(Router)
 
-const base = `${process.env.BASE_URL}`
+const base = `${process.env.BASE_URL}` // 获取二级目录
+console.log(base)
 
 const router = new Router({
   mode: 'history',
@@ -27,7 +28,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   const title = to.meta && to.meta.title
-
+  console.log(title)
   if (title) {
     document.title = title // 设置页面 title
   }
