@@ -28,7 +28,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   const title = to.meta && to.meta.title
-  console.log(title)
+
   if (title) {
     document.title = title // 设置页面 title
   }

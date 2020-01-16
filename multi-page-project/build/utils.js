@@ -83,7 +83,9 @@ exports.setPages = configs => {
     const filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'))
     // 获得模板名称
     const tmp = filePath.substring(0, filePath.lastIndexOf('.'))
-    console.log(tmp)
+    // console.log(filePath)
+    // console.log(tmp)
+    // console.log('>>>>>>>>>>>>>>>>>>>>')
 
     let conf = {
       // page 的入口
@@ -92,8 +94,13 @@ exports.setPages = configs => {
       template: tmp + '.html',
       // 在 dist/index.html 的输出
       filename: filename + '.html',
+      // 当使用 title 选项时，
+      // template 中的 title 标签需要是 <title><%= htmlWebpackPlugin.options.title %></title>
+      title: `${filename} Page`,
       // 页面模板需要加对应的js脚本，如果不加这行则每个页面都会引入所有的js脚本
-      chunks: ['manifest', 'vendor', filename],
+      // https://github.com/vuejs/vue-cli/blob/ce3e2d475d63895cbb40f62425bb6b3237469bcd/docs/zh/config/README.md
+      // 教程与官方文档有出入 找了好久问题
+      chunks: ['chunk-vendors', 'chunk-common', filename],
       inject: true
     }
 

@@ -29,16 +29,16 @@ module.exports = {
   outputDir: 'dist',
   // 是否为生产环境构建生成 source map
   productionSourceMap: true,
-  // pages: utils.setPages(),
-  pages: utils.setPages({
-    addScript () {
-      if (isPro) {
-        return `
-        <script src="https://s95.cnzz.com/z_stat.php?id=xxx&web_id=xxx" language="JavaScript"></script>`
-      }
-      return ''
-    }
-  }),
+  pages: utils.setPages(),
+  // pages: utils.setPages({
+  //   addScript () {
+  //     if (isPro) {
+  //       return `
+  //       <script src="https://s95.cnzz.com/z_stat.php?id=xxx&web_id=xxx" language="JavaScript"></script>`
+  //     }
+  //     return ''
+  //   }
+  // }),
   // css: {
   //   modules: true
   // },
@@ -61,15 +61,15 @@ module.exports = {
       .set('_ser', resolve('src/services'))
 
     // 使用 chainWebpack 修改 DefinePlugin 中的值
-    // config.plugin('define')
-    //   .tap(args => {
-    //     let name = 'process.env'
+    config.plugin('define')
+      .tap(args => {
+        let name = 'process.env'
 
-    //     // 使用 merge 保证原始值不变
-    //     args[0][name] = merge(args[0][name], cfg)
+        // 使用 merge 保证原始值不变
+        args[0][name] = merge(args[0][name], cfg)
 
-    //     return args
-    //   })
+        return args
+      })
   },
   // configureWebpack 来进行修改，
   // 两者的不同点在于 chainWebpack 是链式修改，
@@ -124,7 +124,7 @@ module.exports = {
       ]
     },
     open: true, // 是否自动打开浏览器页面 默认值false
-    host: '127.0.0.1', // 指定使用一个 host。默认是 localhost
+    host: '0.0.0.0', // 指定使用一个 host。默认是 localhost
     port: 8080, // 端口地址 默认8080
     https: false, // 使用https提供服务
     // string | Object 代理设置
