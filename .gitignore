@@ -34,3 +34,9 @@ dev-guide-project/node_modules
 dev-guide-project/dist
 dev-guide-project/.env.local
 dev-guide-project/.env.*.local
+
+
+ui-framework-project/node_modules
+ui-framework-project/dist
+ui-framework-project/.env.local
+ui-framework-project/.env.*.local
