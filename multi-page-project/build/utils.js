@@ -101,7 +101,7 @@ exports.setPages = configs => {
       // https://github.com/vuejs/vue-cli/blob/ce3e2d475d63895cbb40f62425bb6b3237469bcd/docs/zh/config/README.md
       // 教程与官方文档有出入 找了好久问题
       chunks: ['chunk-vendors', 'chunk-common', filename],
-      inject: true
+      inject: false
     }
 
     if (configs) {

@@ -29,16 +29,16 @@ module.exports = {
   outputDir: 'dist',
   // 是否为生产环境构建生成 source map
   productionSourceMap: true,
-  pages: utils.setPages(),
-  // pages: utils.setPages({
-  //   addScript () {
-  //     if (isPro) {
-  //       return `
-  //       <script src="https://s95.cnzz.com/z_stat.php?id=xxx&web_id=xxx" language="JavaScript"></script>`
-  //     }
-  //     return ''
-  //   }
-  // }),
+  // pages: utils.setPages(),
+  pages: utils.setPages({
+    addScript () {
+      if (!isPro) {
+        return `
+        <script src="https://s95.cnzz.com/z_stat.php?id=xxx&web_id=xxx" language="JavaScript"></script>`
+      }
+      return ''
+    }
+  }),
   // css: {
   //   modules: true
   // },
@@ -78,7 +78,7 @@ module.exports = {
   // 查看 plugins 的内容 ------ vue inspect plugins
   configureWebpack: config => {
     // config.plugins = [] // 这样会直接将 plugins 置空
-    // config.entry = utils.getEntries() // 直接覆盖 entry 配置
+    config.entry = utils.getEntries() // 直接覆盖 entry 配置
     // 使用 return 一个对象会通过 webpack-merge 进行合并，plugins 不会置空
     // return {
     //   plugins: [...utils.htmlPlugin()]
