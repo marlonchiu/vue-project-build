@@ -29,3 +29,8 @@ multi-page-project/node_modules
 multi-page-project/dist
 multi-page-project/.env.local
 multi-page-project/.env.*.local
+
+dev-guide-project/node_modules
+dev-guide-project/dist
+dev-guide-project/.env.local
+dev-guide-project/.env.*.local
