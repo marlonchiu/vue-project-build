@@ -7,6 +7,7 @@ import './filter/'
 // 注册插件
 import './widgets/'
 
+// 设置为 false 以阻止 vue 在启动时生成生产提示
 Vue.config.productionTip = false
 
 // 使用 performance 开启性能追踪
