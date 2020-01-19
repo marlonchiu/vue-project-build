@@ -3,6 +3,7 @@
 	    <divider>劳卜的掘金主页</divider>
 	    <qrcode value="https://juejin.im/user/57b0319fc4c97100547f2a77" type="img"></qrcode>
 	    <divider>前端呼啦圈</divider>
+      <img src="~_img/logo.png" alt="logo" width="190px">
   	</div>
 </template>
 

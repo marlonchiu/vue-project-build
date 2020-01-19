@@ -26,26 +26,25 @@ export default {
 
       this.list = [];
 
-      const result = await getHistory({
+      const resData = await getHistory({
         v: '1.0',
         month: data[0],
         day: data[1],
-        key: '' // 填写你自己的 AppKey
+        key: 'd6ceaf9be9f116ae45e7699845d87056' // 填写你自己的 AppKey
       });
 
-      console.log(result);
-
-      // .then(response => {
-      //   if (!response.error_code) {
-      //     response.result.map(e => {
-      //       this.list.push({
-      //         title: e.title,
-      //         desc: e.des,
-      //         src: e.pic
-      //       });
-      //     });
-      //   }
-      // });
+      // console.log(resData);
+      const { result: list, reason, error_code } = resData;
+      // console.log(list);
+      if (!error_code) {
+        list.map(e => {
+          this.list.push({
+            title: e.title,
+            desc: e.des,
+            src: e.pic
+          });
+        });
+      }
     }
   }
 };

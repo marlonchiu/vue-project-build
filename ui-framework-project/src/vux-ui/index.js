@@ -8,7 +8,13 @@ import {
   GridItem,
   DatetimeView,
   XButton,
-  Panel
+  Panel,
+  Cell,
+  Group,
+  XInput,
+  XTextarea,
+  Toast,
+  ToastPlugin
 } from 'vux'
 
 Vue.component('tabbar', Tabbar)
@@ -20,3 +26,9 @@ Vue.component('grid-item', GridItem)
 Vue.component('datetime-view', DatetimeView)
 Vue.component('x-button', XButton)
 Vue.component('panel', Panel)
+Vue.component('cell', Cell)
+Vue.component('group', Group)
+Vue.component('x-input', XInput)
+Vue.component('x-textarea', XTextarea)
+Vue.component('toast', Toast)
+Vue.use(ToastPlugin, { position: 'top' })

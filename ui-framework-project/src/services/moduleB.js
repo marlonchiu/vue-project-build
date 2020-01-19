@@ -1,5 +1,4 @@
 /* 模块 B接口 */
-/* 模块B接口 */
 import Http from './http'
 
 // 生成二维码
