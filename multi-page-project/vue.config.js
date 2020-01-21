@@ -17,7 +17,7 @@ const isPro = process.env.NODE_ENV === 'production'
 const cfg = isPro ? configs.build.env : configs.dev.env
 
 // 项目的部署路径  前边表示项目启动时候的根路径地址
-const BASE_URL = isPro ? '/vue/' : '/vue/'
+const BASE_URL = isPro ? '/vue/' : '/'
 
 const resolve = dir => {
   return path.join(__dirname, dir)
